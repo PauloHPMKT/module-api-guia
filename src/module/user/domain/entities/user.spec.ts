@@ -22,5 +22,14 @@ describe('User entity', () => {
       expect(sut.isActive).toBeTruthy();
       expect(sut.createdAt).toBeInstanceOf(Date);
     });
+
+    it('Should check if createdAt is a date', () => {
+      const sut = new User({
+        name: 'any_name',
+        email: 'any_email',
+        password: 'any_password',
+      });
+      expect(sut.createdAt).toBeInstanceOf(Date);
+    });
   });
 });
